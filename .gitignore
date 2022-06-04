@@ -401,7 +401,11 @@ FodyWeavers.xsd
 # JetBrains Rider
 .idea/
 *.sln.iml
+<<<<<<< HEAD
 # Executables
 *.exe
 *.out
 *.app
+=======
+/MiniCraft.zip
+>>>>>>> f06157c (add everything sadly)

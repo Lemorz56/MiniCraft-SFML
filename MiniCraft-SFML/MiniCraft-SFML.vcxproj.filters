@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\sounds">
+      <UniqueIdentifier>{59c1b474-7b18-48de-a710-2107d52cc3c8}</UniqueIdentifier>
+      <Extensions>wav</Extensions>
+    </Filter>
+    <Filter Include="Resource Files\sprites">
+      <UniqueIdentifier>{b0489da2-b75b-473a-aa3b-1fd641215de3}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AssetMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMan.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GamePlay.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="fastNoise\FastNoise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameTile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameWorld.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraController.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="FreeCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PauseMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Character.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WorldObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AssetMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMan.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GamePlay.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fastNoise\FastNoise.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameTile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameWorld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraController.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FreeCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PauseMenu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Character.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WorldObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="assets\sound\src_bossdeath.wav">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+    <Media Include="assets\sound\src_craft.wav">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+    <Media Include="assets\sound\src_death.wav">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+    <Media Include="assets\sound\src_monsterhurt.wav">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+    <Media Include="assets\sound\src_pickup.wav">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+    <Media Include="assets\sound\src_playerhurt.wav">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+    <Media Include="assets\sound\src_test.wav">
+      <Filter>Resource Files\sounds</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\sprites\char.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\grass.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\gui-color.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\icons.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\LOGO.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\sand.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\src_icons.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\src_icons2.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\tiles.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\tiles-color - Copy.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\tiles-color.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\tools-color.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+    <Image Include="assets\sprites\water.png">
+      <Filter>Resource Files\sprites</Filter>
+    </Image>
+  </ItemGroup>
+</Project>

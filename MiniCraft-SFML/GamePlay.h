@@ -81,7 +81,6 @@ public:
 
     std::vector<sf::Sprite> MakeWorld() const;
     sf::Sprite m_testSprite;
-    sf::Event m_storedEvent;
 
     //std::shared_ptr<camera_controller> m_camera_controller;
     camera_controller m_cameraController;

@@ -86,6 +86,7 @@ namespace gui
 		void updateKeytime(const float& dt);
 		void update(const sf::Vector2i& mousePosWindow, const float& dt);
 		void render(sf::RenderTarget& target);
+
 	};
 
 	class TextureSelector

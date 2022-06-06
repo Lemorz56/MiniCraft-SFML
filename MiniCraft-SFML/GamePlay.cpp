@@ -47,26 +47,6 @@ void GamePlay::Init()
 
     m_context->m_assets->AddTexture(PLAYER, "assets/sprites/char.png", 0, 0, false, 128);
 
-    //m_grass.setTexture(m_context->m_assets->GetTexture(GRASS));
-    //m_grass.setScale(10, 10);
-    //m_grass.setPosition(sf::Vector2f(0, 0));
-    ////m_grass.setTextureRect(m_context->m_window->getViewport(m_context->m_window->getDefaultView()));
-
-    //m_sand.setTexture(m_context->m_assets->GetTexture(SAND));
-    //m_sand.setScale(10, 10);
-    //m_sand.setPosition(sf::Vector2f(160, 0));
-
-    //m_water.setTexture(m_context->m_assets->GetTexture(WATER));
-    //m_water.setScale(10, 10);
-    //m_water.setPosition(sf::Vector2f(320, 0));
-
-    /*for (auto& wall : m_walls)
-    {
-        wall.setTexture(m_context->m_assets->GetTexture(SAND));
-    }
-
-    m_walls[0].setTextureRect(sf::IntRect(0, 0, 854, 16));*/
-
     m_seed = 1335;
     m_waterLevel = 0.99;
 
@@ -86,7 +66,9 @@ void GamePlay::Init()
     m_player.Init(m_context->m_assets->GetTexture(PLAYER));
     m_player.GetSprite().setPosition(sf::Vector2f(150, 150));
 
-    m_char.getSpriteObj().setPosition(sf::Vector2f(150, 150));
+    m_char.GetSpriteObj().setPosition(sf::Vector2f(150, 150));
+
+    
 }
 
 void GamePlay::ProcessInput()
@@ -94,34 +76,32 @@ void GamePlay::ProcessInput()
     sf::Event event;
     while (m_context->m_window->pollEvent(event))
     {
-        m_storedEvent = event;
-
         if (event.type == sf::Event::Closed)
         {
             m_context->m_window->close();
         }
 
-        if (event.type == sf::Event::KeyPressed)
-        {
+        //if (event.type == sf::Event::KeyPressed)
+        //{
 
-            switch (event.key.code)
-            {
-            case sf::Keyboard::W:
-                m_playerDirection = { 0.f, -16.f };
-                break;
-            case sf::Keyboard::S:
-                m_playerDirection = { 0.f, 16.f };
-                break;
-            case sf::Keyboard::A:
-                m_playerDirection = { -16.f, 0.f };
-                break;
-            case sf::Keyboard::D:
-                m_playerDirection = { 16.f, 0.f };
-                break;
+        //    switch (event.key.code)
+        //    {
+        //    case sf::Keyboard::W:
+        //        m_playerDirection = { 0.f, -16.f };
+        //        break;
+        //    case sf::Keyboard::S:
+        //        m_playerDirection = { 0.f, 16.f };
+        //        break;
+        //    case sf::Keyboard::A:
+        //        m_playerDirection = { -16.f, 0.f };
+        //        break;
+        //    case sf::Keyboard::D:
+        //        m_playerDirection = { 16.f, 0.f };
+        //        break;
 
-            }
-            HandleKeyPress(event.key.code);
-        }
+        //    }
+        //    HandleKeyPress(event.key.code);
+        //}
     }
 }
 
@@ -192,7 +172,7 @@ void GamePlay::Draw()
     }
 
     //m_context->m_window->draw(m_player.GetSprite());
-    m_context->m_window->draw(m_char.getSpriteObj());
+    m_context->m_window->draw(m_char.GetSpriteObj());
 
     m_context->m_window->display();
 }

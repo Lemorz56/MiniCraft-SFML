@@ -1,7 +1,6 @@
-#include "character.h"
+#include "Character.h"
 #include <iostream>
 
-//constructor takes a string argument holding file location of sprite, sprite width, and sprite height
 Character::Character(std::string filename, int sprW, int sprH, int nFrames, bool eightDirs, bool slopeMove)
 {
     //loading a file in directory "filename"
@@ -44,7 +43,7 @@ void Character::draw(sf::RenderTarget& target, sf::RenderStates states) const
 }
 
 //returns current Sprite object
-sf::Sprite Character::getSpriteObj() {
+sf::Sprite Character::GetSpriteObj() {
     return _character;
 }
 

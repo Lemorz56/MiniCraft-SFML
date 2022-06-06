@@ -52,7 +52,7 @@ private:
     sf::FloatRect m_collisionBox;
     bool m_collision;
 
-    float m_moveSpeed = 1.15f;//used for static movement - 0.015f
+    float m_moveSpeed = 4.15f;//used for static movement - 0.015f
 
     bool m_eightDirections;
 
@@ -65,5 +65,5 @@ public:
     virtual void charMoveSloping();
     virtual void animate(bool isMoving);
     void checkCollision(WorldObject& obj);
-    sf::Sprite getSpriteObj();
+    sf::Sprite GetSpriteObj();
 };

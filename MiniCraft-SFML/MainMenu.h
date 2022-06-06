@@ -4,6 +4,7 @@
 #include <SFML/Audio.hpp>
 #include "State.h"
 #include "Game.h"
+#include "Gui.h"
 
 class MainMenu : public Engine::State
 {
@@ -23,7 +24,6 @@ private:
 	// Sound
 	sf::SoundBuffer m_buffer;
 	sf::Sound m_menuSound;
-
 
 public:
 	MainMenu(std::shared_ptr<Context> &context);

@@ -4,8 +4,10 @@
 #include "GamePlay.h"
 
 MainMenu::MainMenu(std::shared_ptr<Context>& context)
-    : m_context(context), m_isPlayButtonSelected(true),
-    m_isPlayButtonPressed(false), m_isExitButtonSelected(false),
+    : m_context(context),
+    m_isPlayButtonSelected(true),
+    m_isPlayButtonPressed(false),
+    m_isExitButtonSelected(false),
     m_isExitButtonPressed(false)
 {
 
@@ -138,8 +140,10 @@ void MainMenu::Update(sf::Time deltaTime)
 void MainMenu::Draw()
 {
     m_context->m_window->clear();
+
     m_context->m_window->draw(m_gameTitle);
     m_context->m_window->draw(m_playButton);
     m_context->m_window->draw(m_exitButton);
+
     m_context->m_window->display();
 }

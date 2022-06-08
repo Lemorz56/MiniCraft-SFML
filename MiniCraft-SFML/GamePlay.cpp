@@ -4,7 +4,8 @@
 #include "GameTile.h"
 
 GamePlay::GamePlay(std::shared_ptr<Context>& context)
-    : m_context(context),
+    :
+    m_context(context),
     m_playerDirection({ 16.f, 0.f }),
     m_char("assets/sprites/icons.png", 16, 16, 4, false, false),
     m_elapsedTime(sf::Time::Zero)
@@ -39,8 +40,6 @@ float GamePlay::WorldToScreenY(const int i) const
 
 void GamePlay::Init()
 {
-
-
     m_context->m_assets->AddTexture(GRASS, "assets/sprites/tiles-color.png", 24, 48);
     m_context->m_assets->AddTexture(SAND, "assets/sprites/tiles-color.png", 64, 32);
     m_context->m_assets->AddTexture(WATER, "assets/sprites/tiles-color.png", 24, 24);
@@ -57,6 +56,7 @@ void GamePlay::Init()
     m_heightNoise2.SetSeed(m_seed);
     m_heightNoise2.SetFrequency(0.002);
     m_heightNoise2.SetNoiseType(FastNoise::PerlinFractal);
+
     m_testVecMotherFucker = MakeWorld();
 
     //todo CAMERA VIEW
@@ -67,8 +67,6 @@ void GamePlay::Init()
     m_player.GetSprite().setPosition(sf::Vector2f(150, 150));
 
     m_char.GetSpriteObj().setPosition(sf::Vector2f(150, 150));
-
-    
 }
 
 void GamePlay::ProcessInput()
@@ -118,11 +116,22 @@ void GamePlay::Update(sf::Time deltaTime)
 
     // below should move
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::R))
-        //cameraView.zoom(1.0005f);
-        std::cout << "zoom in" << std::endl;
+        m_cameraController.m_cameraView.zoom(1.0045f);
     else if (sf::Keyboard::isKeyPressed(sf::Keyboard::T))
-        std::cout << "zoom out" << std::endl;
-    //cameraView.zoom(-0.0005f);
+        m_cameraController.m_cameraView.zoom(0.990f);
+
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+        m_cameraController.m_cameraView.move(0, -5.f);
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+        m_cameraController.m_cameraView.move(-5.f, 0);
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+        m_cameraController.m_cameraView.move(0, 5.f);
+
+    if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+        m_cameraController.m_cameraView.move(5.f, 0);
 
 //switch (storedEvent.key.code)
 
@@ -166,9 +175,28 @@ void GamePlay::Draw()
 
     m_context->m_window->setView(m_cameraController.m_cameraView);
 
+    sf::Vector2f center = m_cameraController.m_cameraView.getCenter();
+
+    const sf::Vector2f viewCenter = m_cameraController.m_cameraView.getCenter();
+    sf::Vector2f viewSize = m_cameraController.m_cameraView.getSize();
+
+    viewSize.x /= 2;
+    viewSize.y /= 2;
+
+    const sf::FloatRect currentViewRect(viewCenter - viewSize / 2.f, viewSize);
+
     for (auto& sprite : m_testVecMotherFucker)
     {
-        m_context->m_window->draw(sprite);
+        if (sprite.getGlobalBounds().intersects(currentViewRect))
+        {
+            m_context->m_window->draw(sprite);
+        }
+        /*else
+        {
+            sf::Color col = sprite.getColor();
+            sf::Color newColor(col.r, col.g, col.b, 127.5);
+            sprite.setColor(newColor);
+        }*/
     }
 
     //m_context->m_window->draw(m_player.GetSprite());
@@ -191,10 +219,10 @@ std::vector<sf::Sprite> GamePlay::MakeWorld() const
     //sprites
     sf::Sprite tile;
     std::vector<sf::Sprite> tilesVec;
-    constexpr int maxHeight = 1000 / 16;
+    constexpr int maxHeight = 2048 / 16;
 
-    for (int x = 0; x < maxHeight; x++) { //int x = -offsetX / tileSize - cameraView.getSize().x / tileSize / 2 + 1; x < visibleTilesX - offsetX / tileSize + cameraView.getSize().x / tileSize / 2 + 1; x++
-        for (int y = 0; y < maxHeight; y++) { //int y = -offsetY / tileSize - cameraView.getSize().y / tileSize / 2 + 1; y < visibleTilesY - offsetY / tileSize + cameraView.getSize().y / tileSize / 2 + 1; y++
+    for (int x = -64; x < maxHeight; x++) { //int x = -offsetX / tileSize - cameraView.getSize().x / tileSize / 2 + 1; x < visibleTilesX - offsetX / tileSize + cameraView.getSize().x / tileSize / 2 + 1; x++
+        for (int y = -64; y < maxHeight; y++) { //int y = -offsetY / tileSize - cameraView.getSize().y / tileSize / 2 + 1; y < visibleTilesY - offsetY / tileSize + cameraView.getSize().y / tileSize / 2 + 1; y++
             float tileHeight = m_heightNoise.GetNoise(x, y);
             tileHeight += 1;
             //std::cout << "TILE HEIGHT: " << tileHeight << "\n";
